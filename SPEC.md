@@ -2,7 +2,7 @@
 
 ## Execution Description
 
-Runs Hugging Face BertModel.from_pretrained(model_name) on synthetic token ids. sequence_len, batch_size, warmup_iters, num_iterations, model_name, and dtype (fp16 when '16' is in yaml) come from yaml. precision, num_gpus, and prompt_source are ignored. Latency percentiles equal the mean. Sweep dimensions: model_name, dtype, precision, num_gpus, prompt_source, sequence_len, batch_size, warmup_iters.
+Runs Hugging Face BertModel.from_pretrained(model_name) on synthetic token ids. sequence_len, batch_size, warmup_iters, num_iterations, model_name, and dtype (fp16 when '16' is in yaml) come from yaml. precision, num_gpus, and prompt_source are ignored. Latency percentiles equal the mean. Sweep dimensions: model_name, dtype, sequence_len, batch_size, warmup_iters, num_iterations.
 
 ## Parameters
 
@@ -10,9 +10,6 @@ Runs Hugging Face BertModel.from_pretrained(model_name) on synthetic token ids. 
 | --- | --- | --- | --- | --- |
 | model_name | `--model-name` | smoke=bert-base-uncased, baseline=bert-base-uncased, extended=bert-base-uncased | bert-base-uncased | From Parameter list; see Execution Description With Parameters. |
 | dtype | `--dtype` | smoke=f16_r, baseline=f16_r, extended=f16_r | f16_r | From Parameter list; see Execution Description With Parameters. |
-| precision | `--precision` | smoke=mixed_float16, baseline=mixed_float16, extended=mixed_float16 | mixed_float16 | From Parameter list; see Execution Description With Parameters. |
-| num_gpus | `--num-gpus` | smoke=1, baseline=1, extended=1 | 1 | From Parameter list; see Execution Description With Parameters. |
-| prompt_source | `--prompt-source` | smoke=synthetic, baseline=synthetic, extended=synthetic | synthetic | From Parameter list; see Execution Description With Parameters. |
 | sequence_len | `--sequence-len` | smoke=32, baseline=128, extended=256 | 128 | From Parameter list; see Execution Description With Parameters. |
 | batch_size | `--batch-size` | smoke=1, baseline=4, extended=8 | 4 | From Parameter list; see Execution Description With Parameters. |
 | warmup_iters | `--warmup-iters` | smoke=2, baseline=2, extended=5 | 2 | From Parameter list; see Execution Description With Parameters. |

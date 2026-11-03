@@ -10,9 +10,6 @@ sweep:
   profile: smoke
   model_name: bert-base-uncased
   dtype: f16_r
-  precision: mixed_float16
-  num_gpus: 1
-  prompt_source: synthetic
   sequence_len:
     smoke: 32
     baseline: 128

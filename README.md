@@ -85,7 +85,7 @@ Three operator scripts from [`garys-gpu-benchmarks/gpu-bench-suite`](https://git
 
 ## 1. Overview
 
-Runs Hugging Face BertModel.from_pretrained(model_name) on synthetic token ids. sequence_len, batch_size, warmup_iters, num_iterations, model_name, and dtype (fp16 when '16' is in yaml) come from yaml. precision, num_gpus, and prompt_source are ignored. Latency percentiles equal the mean. Sweep dimensions: model_name, dtype, precision, num_gpus, prompt_source, sequence_len, batch_size, warmup_iters.
+Runs Hugging Face BertModel.from_pretrained(model_name) on synthetic token ids. sequence_len, batch_size, warmup_iters, num_iterations, model_name, and dtype (fp16 when '16' is in yaml) come from yaml. precision, num_gpus, and prompt_source are ignored. Latency percentiles equal the mean. Sweep dimensions: model_name, dtype, sequence_len, batch_size, warmup_iters, num_iterations.
 
 ## 2. What It Validates
 
