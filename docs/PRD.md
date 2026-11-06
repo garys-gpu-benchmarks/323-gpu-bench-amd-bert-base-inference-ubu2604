@@ -15,13 +15,13 @@ This PRD.md section is populated from benchmark_specification.json, which is the
 BERT Inference Sweep
 
 ## Execution Summary (Run and Measure)
-Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference. This is not TensorFlow
+Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference
 
 ## Main Goal
 Measure PyTorch BERT inference performance
 
 ## Validation Objective
-Validates sequences/s, tokens/s, and peak memory from inline HF BERT. This is not TensorFlow
+Validates sequences/s, tokens/s, and peak memory from inline Hugging Face BERT in PyTorch
 
 ## Workload Category
 Training, Inference, Model Workloads

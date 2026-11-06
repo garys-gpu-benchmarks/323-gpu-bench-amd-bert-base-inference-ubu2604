@@ -140,6 +140,16 @@
     "value": "-"
   },
   {
+    "field_name": "Validation Objective",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Validates sequences/s, tokens/s, and peak memory from inline Hugging Face BERT in PyTorch"
+  },
+  {
+    "field_name": "Command Tools Executed",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Run inline transformers.BertModel.from_pretrained on synthetic token batches"
+  },
+  {
     "field_name": "run_benchmark Command Plus Options for Smoke Run (One minute or less)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "bash run_benchmark.sh --smoke --validate --model-name bert-base-uncased --dtype f16_r --sequence-len 32 --batch-size 1 --warmup-iters 2 --num-iterations 5"
@@ -155,24 +165,14 @@
     "value": "bash run_benchmark.sh --extended --validate --model-name bert-base-uncased --dtype f16_r --sequence-len 256 --batch-size 8 --warmup-iters 5 --num-iterations 149000"
   },
   {
-    "field_name": "Validation Objective",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Validates sequences/s, tokens/s, and peak memory from inline HF BERT. This is not TensorFlow"
-  },
-  {
-    "field_name": "Command Tools Executed",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run inline transformers.BertModel.from_pretrained on synthetic token batches"
-  },
-  {
     "field_name": "Command Execution Details and Purpose",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference. This is not TensorFlow"
+    "value": "Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference"
   },
   {
     "field_name": "Command Methodology",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run inline Hugging Face BertModel on synthetic token batches for yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency into the p50, p95, and p99 columns. This is not TensorFlow"
+    "value": "Run inline Hugging Face BertModel on synthetic token batches for yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency into the p50, p95, and p99 columns"
   },
   {
     "field_name": "Execution Description With Parameters",
@@ -372,7 +372,7 @@
   {
     "field_name": "Installation and Execution Summary",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference. This is not TensorFlow"
+    "value": "Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference"
   },
   {
     "field_name": "Workload Command Line Executable",
@@ -392,7 +392,7 @@
   {
     "field_name": "Execution Summary (Run and Measure)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference. This is not TensorFlow"
+    "value": "Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference"
   },
   {
     "field_name": "nVidia Porting Instructions (Reference Only)",
@@ -412,7 +412,7 @@
   {
     "field_name": "Profile Parameter Values",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Parameters_SmokeBaselineExtend",
-    "value": "{\"model_name\": {\"smoke\": \"bert-base-uncased\", \"baseline\": \"bert-base-uncased\", \"extended\": \"bert-base-uncased\", \"notes\": \"\"}, \"dtype\": {\"smoke\": \"f16_r\", \"baseline\": \"f16_r\", \"extended\": \"f16_r\", \"notes\": \"\"}, \"sequence_len\": {\"smoke\": \"32\", \"baseline\": \"128\", \"extended\": \"256\", \"notes\": \"\"}, \"batch_size\": {\"smoke\": \"1\", \"baseline\": \"4\", \"extended\": \"8\", \"notes\": \"\"}, \"warmup_iters\": {\"smoke\": \"2\", \"baseline\": \"2\", \"extended\": \"5\", \"notes\": \"\"}, \"num_iterations\": {\"smoke\": \"5\", \"baseline\": \"52500\", \"extended\": \"149000\", \"notes\": \"2026-09-06: AMD Ubuntu 26.04 sibling of 123. Same standardized num_iterations baseline=52500/extended=149000.\"}}"
+    "value": "{\"model_name\": {\"smoke\": \"bert-base-uncased\", \"baseline\": \"bert-base-uncased\", \"extended\": \"bert-base-uncased\"}, \"dtype\": {\"smoke\": \"f16_r\", \"baseline\": \"f16_r\", \"extended\": \"f16_r\"}, \"sequence_len\": {\"smoke\": \"32\", \"baseline\": \"128\", \"extended\": \"256\"}, \"batch_size\": {\"smoke\": \"1\", \"baseline\": \"4\", \"extended\": \"8\"}, \"warmup_iters\": {\"smoke\": \"2\", \"baseline\": \"2\", \"extended\": \"5\"}, \"num_iterations\": {\"smoke\": \"5\", \"baseline\": \"52500\", \"extended\": \"149000\"}}"
   },
   {
     "field_name": "Profile Command Authorship",

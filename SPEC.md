@@ -41,7 +41,7 @@ Runs Hugging Face BertModel.from_pretrained(model_name) on synthetic token ids. 
 
 ## Installation and Execution Summary
 
-Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference. This is not TensorFlow
+Run inline Hugging Face Transformers BertModel on synthetic token batches with yaml sequence_len and batch_size, then write sequences/s, tokens/s, and mean latency as p50/p95/p99, to measure PyTorch BERT inference
 
 ## Platform Portability
 
