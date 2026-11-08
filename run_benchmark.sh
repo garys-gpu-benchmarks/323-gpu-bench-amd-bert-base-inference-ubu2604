@@ -19,10 +19,9 @@ usage() {
 
 Usage: bash run_benchmark.sh [OPTIONS]
 
-Workload Name:          BERT Inference Sweep.
-Main Goal:              Measure PyTorch BERT inference performance.
-Command Tools Executed: Run inline transformers.BertModel.from_pretrained on synthetic token
-                        batches.
+Workload Name:          BERT Inference Sweep
+Main Goal:              Measure PyTorch BERT inference performance
+Command Tools Executed: Run inline transformers.BertModel.from_pretrained on synthetic token batches
 
 Profiles (default: --smoke):
   --smoke                       Run smoke profile
