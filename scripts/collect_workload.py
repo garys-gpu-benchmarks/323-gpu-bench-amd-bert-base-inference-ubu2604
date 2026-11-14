@@ -17,6 +17,26 @@ os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
 os.environ.setdefault("TRANSFORMERS_VERBOSITY", "error")
 
 
+def mark_measure_start() -> None:
+    """Setup ends here: record when the timed work starts (TEMPLATE_00_141).
+
+    run_benchmark.sh reads BENCHMARK_MEASURE_START_FILE when the benchmark stops and
+    starts the benchmark clock at this time, so model load and warmup count as setup.
+    The first call of a run wins. Outside run_benchmark.sh it does nothing.
+    """
+    import os
+    import time
+
+    path = os.environ.get("BENCHMARK_MEASURE_START_FILE", "")
+    if not path or os.path.exists(path):
+        return
+    try:
+        with open(path, "w", encoding="utf-8") as handle:
+            handle.write(f"{time.time_ns()}\n")
+    except OSError:
+        pass
+
+
 def pv(params, key, profile, default=""):
     raw = params.get(key, default)
     if isinstance(raw, dict):
@@ -97,6 +117,7 @@ def main() -> int:
             model(input_ids=ids, attention_mask=mask)
         if device.type == "cuda":
             torch.cuda.synchronize()
+        mark_measure_start()  # setup ends: model loaded, warmup done
         start = time.perf_counter()
         for _ in range(iters):
             model(input_ids=ids, attention_mask=mask)
