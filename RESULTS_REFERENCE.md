@@ -3,23 +3,23 @@
 **Main goal:** Measure PyTorch BERT inference performance  
 **Tools:** Run inline transformers.BertModel.from_pretrained on synthetic token batches
 
-Reference results measured by the maintainer on the system shown in each section (generator TEMPLATE_00_146 · recorded 2026-11-18). Your own runs write `results/RESULTS_ACTUAL.md` in the same format.
+Reference results measured by the maintainer on the system shown in each section (generator TEMPLATE_00_148 · recorded 2026-11-19). Your own runs write `results/RESULTS_ACTUAL.md` in the same format.
 
 > Smoke runs use deliberately small sizes. They check that the workload installs and runs end to end; their numbers are not performance results. Baseline and extended are.
 
 <!-- profile:smoke -->
 ## smoke
 
-- **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 26.04.1 LTS · kernel 7.0.0-38-generic · driver 7.1.9.31600000
-- **Run:** 2026-11-18T11:22:50Z · status **PASS** (exit 0)
-- **Time (mm:ss):** setup 01:16 · benchmark 00:00 · whole run 01:25
-- **Source:** run 323_20261118_112250
+- **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 26.04.1 LTS · kernel 7.0.0-43-generic · driver 7.1.9.31600000
+- **Run:** 2026-11-19T15:40:36Z · status **PASS** (exit 0)
+- **Time (mm:ss):** setup 01:21 · benchmark 00:01 · whole run 01:30
+- **Source:** run 323_20261119_154036
 - **Command:** `bash run_benchmark.sh --smoke --model-name bert-base-uncased --dtype f16_r --sequence-len 32 --batch-size 1 --warmup-iters 2 --num-iterations 5`
 
 | # | Metric | Result |
 |---|---|---|
-| 1 | Inference throughput (sequences_per_sec) | 285.49908466082115 |
-| 2 | Inference latency, mean step time, ms (mean_latency_ms) | 3.5026382000069134 |
-| 3 | Token throughput (tokens_per_sec) | 9135.970709146277 |
+| 1 | Inference throughput (sequences_per_sec) | 253.57594059316204 |
+| 2 | Inference latency, mean step time, ms (mean_latency_ms) | 3.943591799998103 |
+| 3 | Token throughput (tokens_per_sec) | 8114.430098981185 |
 | 4 | Peak GPU memory (peak_gpu_memory_gb) | 0.32100608 |
 <!-- /profile:smoke -->
